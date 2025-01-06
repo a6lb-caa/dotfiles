@@ -68,8 +68,3 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-# export ANDROID_SDK=/Users/atalebagha/Library/Android/sdk/
-# export ANDROID_NDK=/Users/atalebagha/Library/Android/sdk/ndk-bundle
-
-# Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zprofile.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zprofile.post.zsh"

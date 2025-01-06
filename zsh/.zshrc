@@ -224,6 +224,8 @@ fcd() {
 
 alias ls='lsd'
 
+export PATH=$PATH:/usr/local/go/bin
+
 if [ -f ~/.zshprivate ]; then
   source ~/.zshprivate
 else

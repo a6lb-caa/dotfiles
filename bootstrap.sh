@@ -8,6 +8,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # ~install zellij
 cargo install --locked zellij
 
+# install lsd
+cargo install lsd
+
 # ~Manually install NeoVim
 mkdir -p ~/.local
 cd ~/.local
@@ -35,6 +38,10 @@ cp ~/dotfiles/zimfw/* ~/
 # Setup git completions for bash
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 echo "source ~/.git-completion.bash" >> ~/.bashrc
+
+# install go
+ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz
+
 
 # Lazygit
 git clone https://github.com/jesseduffield/lazygit.git lazygit-tmp
