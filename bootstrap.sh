@@ -40,7 +40,9 @@ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 echo "source ~/.git-completion.bash" >> ~/.bashrc
 
 # install go
- rm -rf /usr/local/go && tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+
 
 
 # Lazygit
