@@ -7,6 +7,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # ~install zellij
 cargo install zellij
+cp -r ~/dotfiles/zellij/.config/zellij/* ~/.config/zellij
 
 # install lsd
 cargo install lsd
