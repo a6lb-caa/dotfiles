@@ -20,7 +20,7 @@ ln -s ~/.local/squashfs-root/AppRun ~/.local/bin/nvim
 # Bring in our custom neovim config
 echo "XDG_CONFIG_HOME=$HOME" >> ~/.profile
 mkdir ~/.config/nvim
-cp -a /nvim/. ~/.config/nvim/
+cp -R /nvim/.config/nvim/* ~/.config/nvim/
 
 # Get Neovim mostly ready to go
 cd /workspaces/$RepositoryName
