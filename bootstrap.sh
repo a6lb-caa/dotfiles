@@ -40,8 +40,26 @@ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 echo "source ~/.git-completion.bash" >> ~/.bashrc
 
 # install go
-tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz
-export PATH=$PATH:/usr/local/go/bin
+VERSION="1.21.4" # go version
+ARCH="amd64" # go archicture
+curl -O -L "https://golang.org/dl/go${VERSION}.linux-${ARCH}.tar.gz"
+# Instead of curl, one can use wget command too #
+wget -L "https://golang.org/dl/go${VERSION}.linux-${ARCH}.tar.gz"
+ls -l
+
+curl -sL https://golang.org/dl/ | grep -A 5 -w "go${VERSION}.linux-${ARCH}.tar.gz"
+
+tar -xf "go${VERSION}.linux-${ARCH}.tar.gz"
+ls -l
+cd go/
+ls -l
+cd ..
+
+sudo chown -R root:root ./go
+sudo mv -v go /usr/local
+
+source ~/.zshrc
+go version
 
 
 
