@@ -25,7 +25,7 @@ cp -r ~/dotfiles/nvim/.config/nvim/* ~/.config/nvim
 # Get Neovim mostly ready to go
 cd /workspaces/$RepositoryName
 # poetry run pip install pynvim ipython  # Avoid if we can help it
-poetry run nvim --headless +":UpdateRemotePlugins" +"q!"
+# poetry run nvim --headless +":UpdateRemotePlugins" +"q!"
 
 # Configure zsh as default
 sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
@@ -37,4 +37,8 @@ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 echo "source ~/.git-completion.bash" >> ~/.bashrc
 
 # Lazygit
-sudo apt install lazygit
+git clone https://github.com/jesseduffield/lazygit.git lazygit-tmp
+cd lazygit-tmp
+go install
+cd ..
+rm -rf lazygit-tmp
