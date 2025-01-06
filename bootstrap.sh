@@ -20,7 +20,7 @@ ln -s ~/.local/squashfs-root/AppRun ~/.local/bin/nvim
 # Bring in our custom neovim config
 echo "XDG_CONFIG_HOME=$HOME" >> ~/.profile
 mkdir ~/.config/nvim
-cp -R /nvim/.config/nvim/* ~/.config/nvim/
+cp -R nvim/.config/nvim/* ~/.config/nvim/
 
 # Get Neovim mostly ready to go
 cd /workspaces/$RepositoryName
@@ -43,4 +43,4 @@ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 echo "source ~/.git-completion.bash" >> ~/.bashrc
 
 # Lazygit
-sudo apt-get install lazygit
+sudo apt install lazygit
