@@ -1,7 +1,12 @@
 #!/bin/bash
 
-cp .tmux.conf ~
 cp .gitconfig ~
+
+# ~Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# ~install zellij
+cargo install --locked zellij
 
 # ~Manually install NeoVim
 mkdir -p ~/.local
@@ -14,10 +19,8 @@ ln -s ~/.local/squashfs-root/AppRun ~/.local/bin/nvim
 
 # Bring in our custom neovim config
 echo "XDG_CONFIG_HOME=$HOME" >> ~/.profile
-git clone https://github.com/shea-parkes/neovim-config ~/.config/nvim
-cd ~/.config/nvim
-git submodule init
-git submodule update
+mkdir ~/.config/nvim
+cp -a /nvim/. ~/.config/nvim/
 
 # Get Neovim mostly ready to go
 cd /workspaces/$RepositoryName
@@ -30,6 +33,14 @@ cd ~/.vim
 git submodule init
 git submodule update
 
+# Configure zsh as default
+sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
+cp /zsh/* ~/
+cp /zimfw/* ~/
+
 # Setup git completions for bash
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 echo "source ~/.git-completion.bash" >> ~/.bashrc
+
+# Lazygit
+sudo apt-get install lazygit
