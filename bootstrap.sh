@@ -6,7 +6,7 @@ cp .gitconfig ~
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # ~install zellij
-cargo install --locked zellij
+cargo install zellij
 
 # install lsd
 cargo install lsd
@@ -69,3 +69,7 @@ cd lazygit-tmp
 go install
 cd ..
 rm -rf lazygit-tmp
+
+# install fzf
+sudo apt install fzf
+
