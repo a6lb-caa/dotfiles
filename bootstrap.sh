@@ -72,5 +72,9 @@ cd ..
 rm -rf lazygit-tmp
 
 # install fzf
-sudo apt install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
+# install fonts
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
+./nerd-fonts/install.sh
